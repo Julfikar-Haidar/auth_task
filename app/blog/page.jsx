@@ -4,33 +4,26 @@ import Link from "next/link";
 import Image from "next/image";
 
 async function getData() {
-  const res = await fetch(
-    "https://api.slingacademy.com/v1/sample-data/photos",
-    {
-      cache: "no-store",
-    }
-  );
+  const res = await fetch("https://api.slingacademy.com/v1/sample-data/photos", {
+    cache: "no-store",
+  });
 
   if (!res.ok) {
     throw new Error("Failed to fetch data");
   }
-  console.log("res", res);
+// console.log('res', res);
   return res.json();
 }
 
-const Home = async () => {
+const Blog = async () => {
   const data = await getData();
   return (
     <div className={styles.mainContainer}>
       {data?.photos.map((item) => (
-        <Link
-          href={`/blog/${item.id}`}
-          className={styles.container}
-          key={item.id}
-        >
+        <Link href={`/blog/${item.id}`} className={styles.container} key={item.id}>
           <div className={styles.imageContainer}>
             <Image
-              src={item.url}
+             src={item.url}
               alt=""
               width={400}
               height={250}
@@ -47,4 +40,4 @@ const Home = async () => {
   );
 };
 
-export default Home;
+export default Blog;

@@ -1,0 +1,36 @@
+.title {
+    font-size: 2rem;
+    text-transform: uppercase;
+    margin: 0 1rem 1rem;
+}
+
+.container {
+    /* padding: 0 2rem; */
+    margin-bottom: 2rem;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2.5rem 1rem;
+    place-items: center;
+}
+
+.load_btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 0;
+}
+
+.fetch_more {
+    padding: 5px 10px;
+    border-radius: 3px;
+    background-color: rgb(94, 96, 90);
+    color: white;
+    outline: none;
+    cursor: pointer;
+    font-weight: 500;
+    margin: 10px 0;
+    text-transform: capitalize;
+}
